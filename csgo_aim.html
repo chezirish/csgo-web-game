@@ -1,0 +1,782 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>csgo</title>
+<script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="prefixfree.min.js"></script>
+
+</head>
+<body>
+
+<div class="hola"></div>
+
+<audio src="beep.mp3" id="beep1"></audio>
+<audio src="beep.mp3" id="beep2"></audio>
+<audio src="beep.mp3" id="beep3"></audio>
+<audio src="beep.mp3" id="beep4"></audio>
+<audio src="beep.mp3" id="beep5"></audio>
+<audio src="beep.mp3" id="beep6"></audio>
+<audio src="beep.mp3" id="beep7"></audio>
+<audio src="beep.mp3" id="beep8"></audio>
+<audio src="beep.mp3" id="beep9"></audio>
+<audio src="beep.mp3" id="beep10"></audio>
+
+<audio src="ak47.mp3" id="ak1"></audio>
+<audio src="ak47.mp3" id="ak2"></audio>
+<audio src="ak47.mp3" id="ak3"></audio>
+<audio src="ak47.mp3" id="ak4"></audio>
+<audio src="ak47.mp3" id="ak5"></audio>
+<audio src="ak47.mp3" id="ak6"></audio>
+<audio src="ak47.mp3" id="ak7"></audio>
+<audio src="ak47.mp3" id="ak8"></audio>
+<audio src="ak47.mp3" id="ak9"></audio>
+<audio src="ak47.mp3" id="ak10"></audio>
+
+<audio src="p90.mp3" id="p1"></audio>
+<audio src="p90.mp3" id="p2"></audio>
+<audio src="p90.mp3" id="p3"></audio>
+<audio src="p90.mp3" id="p4"></audio>
+<audio src="p90.mp3" id="p5"></audio>
+<audio src="p90.mp3" id="p6"></audio>
+<audio src="p90.mp3" id="p7"></audio>
+<audio src="p90.mp3" id="p8"></audio>
+<audio src="p90.mp3" id="p9"></audio>
+<audio src="p90.mp3" id="p10"></audio>
+
+<audio src="m4a1.mp3" id="m4a1"></audio>
+<audio src="m4a1.mp3" id="m4a2"></audio>
+<audio src="m4a1.mp3" id="m4a3"></audio>
+<audio src="m4a1.mp3" id="m4a4"></audio>
+<audio src="m4a1.mp3" id="m4a5"></audio>
+<audio src="m4a1.mp3" id="m4a6"></audio>
+<audio src="m4a1.mp3" id="m4a7"></audio>
+<audio src="m4a1.mp3" id="m4a8"></audio>
+<audio src="m4a1.mp3" id="m4a9"></audio>
+<audio src="m4a1.mp3" id="m4a10"></audio>
+
+<audio src="aug.mp3" id="aug1"></audio>
+<audio src="aug.mp3" id="aug2"></audio>
+<audio src="aug.mp3" id="aug3"></audio>
+<audio src="aug.mp3" id="aug4"></audio>
+<audio src="aug.mp3" id="aug5"></audio>
+<audio src="aug.mp3" id="aug6"></audio>
+<audio src="aug.mp3" id="aug7"></audio>
+<audio src="aug.mp3" id="aug8"></audio>
+<audio src="aug.mp3" id="aug9"></audio>
+<audio src="aug.mp3" id="aug10"></audio>
+
+
+<div id="weponbar">
+    <div><button class="ak47Img"></button></div>
+    <div><button class="m4a1Img"></button></div>
+    <div><button class="p90Img"></button></div>
+    <div><button class="augImg"></button></div>
+</div>
+
+<div  id="enemy">
+    <div  id="head"></div>
+    <div  id="chest"></div>
+    <div id="abdomed"></div>
+    <div id="leftLegs1"></div>
+    <div id="leftLegs2"></div>
+    <div id="rightlegs1"></div>
+    <div id="leftLegs4"></div>
+    <div id="leftLegs5"></div>
+    <div id="leftLegs6"></div>
+    <div id="rightlegs2"></div>
+</div>
+
+<div id="blood1"></div>
+<div id="blood2"></div>
+<div id="blood3"></div>
+
+<div class="menu">
+<div class="scorebar">
+<p id="scoreIs">score is :</p>
+</div>
+
+<p id="scoreValue">0</p>
+
+<div class="totalbar">
+<p>total shoots :</p>
+</div>
+
+<p id="totalValue">0</p>
+
+<div class="missbar">
+<p>missing shoots :</p>
+</div>
+<p id="missValue">0</p>
+
+<div class="accuracybar">
+    <p class="accuracy">accuracy :</p>
+    <p id="accuracyValue">0%</p>
+</div>
+
+<div class="shotsHead">
+    <p class="headText">shot in the head :</p>
+    <p id="headValue">0</p>
+</div>
+
+<div class="shotChest">
+    <p class="chestText">shot in the chest :</p>
+    <p id="chestValue">0</p>
+</div>
+
+<div class="shotAbdomed">
+    <p class="abdomedText">shot in the abdomed :</p>
+    <p id="abdomedValue">0</p>
+</div>
+
+<div class="shotLeftLeg">
+    <p class="leftLegText">shot in the left leg :</p>
+    <p id="leftLegValue">0</p>
+</div>
+
+<div class="shotRightLeg">
+    <p class="rightLegText">shot in the right leg :</p>
+    <p id="rightLegValue">0</p>
+</div>
+
+<div class="curretWeapon"></div>
+</div>
+<div class="test" style="position: absolute; left: 0; top: 0;"></div>
+
+<style>
+
+.ak47Img {
+width: 12.5%;
+height: 63px;
+background: url(ak47.png) no-repeat #F0D3E2;
+background-size: 100%;
+position: absolute;
+right: 0;
+bottom: 0;
+outline: none;
+}
+
+.m4a1Img {
+margin-right: 12.5%;
+width: 12.5%;
+height: 63px;
+background: url(m4a1.png) no-repeat #F0D3E2;
+background-size: 100%;
+position: absolute;
+right: 0;
+bottom: 0;
+outline: none;
+}
+
+.p90Img {
+margin-right: 25%;
+width: 12.5%;
+height: 63px;
+background: url(p90.png) no-repeat #F0D3E2;
+background-size: 100%;
+position: absolute;
+right: 0;
+bottom: 0;
+outline: none;
+}
+
+.augImg {
+margin-right: 37.5%;
+width: 12.5%;
+height: 63px;
+background: url(aug.png) no-repeat #F0D3E2;
+background-size: 100%;
+position: absolute;
+right: 0;
+bottom: 0;
+outline: none;
+}
+
+.hola {
+width: 1px;
+height: 1px;
+}
+
+#totalValue {
+margin: 3px 0 0 0;
+font-size: 20px;
+}
+
+
+.totalbar p {
+margin: 0;
+width: 100px;
+}
+
+.totalbar {
+margin: 5px 0 0 20px;
+width: 100px;
+height: 21px;
+font-size: 18px;
+float: left;
+}
+
+.scorebar {
+float: left;
+}
+
+#scoreIs {
+width: 80px;
+margin: 0 0 0 20px;
+font-size: 20px;
+}
+
+#scoreValue {
+font-size: 20px;
+margin: 0;
+}
+
+.missbar {
+margin: 5px 0 0 20px;
+width: 120px;
+font-size: 17px;
+float: left;
+}
+
+.missbar p {
+margin: 0;
+}
+
+#missValue {
+margin: 2px 0 0 0;
+font-size: 21px;
+}
+
+.menu {
+width: 49.7%;
+height: 130px;
+background: #d48c8c;
+margin: 0;
+margin-top: 650px;
+border-radius: 25px;
+cursor: url(crosshair.cur), default !important;
+position: absolute;
+bottom: 0;
+}
+
+.curretWeapon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    float: right;
+    width: 200px;
+    height: 63px;
+    background: url(ak47.png) no-repeat;
+    border: double pink 3px;
+    border-radius: 16px;
+}
+
+.shotLeftLeg {
+    width: 164px;
+    position: absolute;
+    bottom: 4px;
+    left: 18px;
+}
+
+.leftLegText {
+    float: left;
+    margin: 3px 0 0 0;
+    font-size: 17px;
+}
+
+#leftLegValue {
+    margin: 0 0 0 0;
+    float: left;
+    font-size: 21px;
+}
+
+.accuracybar {
+    width: 163px;
+    margin: 0;
+    position: absolute;    
+    left: 193px;
+    bottom: 105px;
+    font-size: 19px;
+}
+
+.accuracy {
+    margin: 1px 0 0 0;
+    float: left;
+}
+
+#accuracyValue {
+    margin: 0 18px 0 0;
+    float: left;
+    font-size: 21px;
+ }
+
+.accshotlefturacy {
+    margin: 1px 0 0 0;
+    float: left;
+}
+
+.shotsHead {
+    width: 153px;
+    position: absolute;    
+    left: 193px;
+    bottom: 78px;
+    font-size: 17px;
+}
+
+.headText {
+    float: left;
+    margin: 3px 0 0 0;
+    font-size: 17px;
+    width: 120px;
+}
+
+#headValue {
+    margin: 0;
+    float: right;
+    width: 33px;
+    font-size: 21px;
+}
+
+.shotChest {
+    position: absolute;
+    left: 193px;
+    width: 161px;
+    bottom: 53px;
+}
+
+.chestText {
+    float: left;
+    margin: 3px 0 0 0;
+    font-size: 17px;
+}
+
+#chestValue {
+    margin: 0;
+    float: left;
+    font-size: 21px;
+}
+
+.shotRightLeg {
+    width: 184px;
+    position: absolute;
+    left: 193px;
+}
+
+.rightLegText {
+    margin: 4px 0 0 0;
+    float: left;
+    font-size: 17px;
+}
+
+#rightLegValue {
+    float: left;
+    margin: 0 0 0 0;
+    font-size: 21px;
+}
+
+.shotAbdomed {
+    width: 170px;
+    position: absolute;
+    left: 18px;
+}
+
+.abdomedText {
+    margin: 4px 0 0 0;
+    font-size: 16px;
+    float: left;
+}
+
+#abdomedValue {
+    margin: 0 0 0 0;
+    float: left;
+    font-size: 21px;
+}
+
+.blood1 {
+background: url(blood1.png);
+width: 100px;
+height: 100px;
+position: absolute;
+}
+
+.blood2 {
+background: url(blood2.png);
+width: 100px;
+height: 100px;
+position: absolute;
+}
+
+button {
+cursor: url(crosshair.cur), default !important;
+}
+
+html {
+cursor: url(crosshair.cur), default !important;
+}
+
+body {
+margin: 0;
+overflow: hidden;
+overflow-y: hidden; 
+}
+
+.enemy_block {
+display: block;
+width: 61px;
+height: 144px;
+position: absolute;
+z-index: 1;
+}
+
+.head {
+    display: block;
+    margin-left: 19px;
+    background: url(ct.png) no-repeat;
+    background-position: 55% 1%;
+    width: 25px;
+    height: 22px;
+    position: absolute;
+    z-index: 5;
+}
+
+.chest {
+    margin: 14px 0 0 9px;
+    display: block;
+    background: url(ct.png) no-repeat;
+    background-position: 80% 14%;
+    width: 49px;
+    height: 33px;
+    position: absolute;
+    z-index: 4;
+}
+
+.abdomed {
+    display: block;
+    background: url(ct.png) no-repeat 100% 44%;
+    width: 61px;
+    height: 33px;
+    position: absolute;
+    margin: 47px 0 0 0;
+    z-index: 3;
+}
+
+
+.leftLegs1 {
+    display: block;
+    background: url(ct.png) no-repeat 3% 64%;
+    width: 26px;
+    height: 23px;
+    position: absolute;
+    margin: 75px 0 0 0;
+    z-index: 2;
+}
+
+.leftLegs2 {
+    display: block;
+    background: url(ct.png) no-repeat 40% 64%;
+    width: 12px;
+    height: 23px;
+    position: absolute;
+    margin: 75px 0 0px 19px;
+    z-index: 2;
+}
+
+.rightlegs1 {
+    display: block;
+    background: url(ct.png) no-repeat 85% 66%;
+    width: 19px;
+    height: 23px;
+    position: absolute;
+    margin: 77px 0 0 36px;
+    z-index: 2;
+}
+
+.leftLegs4 {
+    display: block;
+    background: url(ct.png) no-repeat 16% 80%;
+    background-size: 307%;
+    width: 19px;
+    height: 23px;
+    position: absolute;
+    margin: 94px 0 0 6px;
+    z-index: 1;
+}
+
+.leftLegs5 {
+    display: block;
+    background: url(ct.png) no-repeat 16% 89%;
+    background-size: 409%;
+    width: 15px;
+    height: 13px;
+    position: absolute;
+    margin: 116px 0 0 6px;
+    z-index: 0;
+}
+
+.leftLegs6 {
+    display: block;
+    background: url(ct.png) no-repeat 3% 100%;
+    background-size: 308%;
+    width: 19px;
+    height: 13px;
+    position: absolute;
+    margin: 129px 0 0 1px;
+    z-index: 0;
+}
+
+.rightlegs2 {
+    display: block;
+    background: url(ct.png) no-repeat 95% 100%;
+    width: 18px;
+    height: 36px;
+    position: absolute;
+    margin: 100px 0 0 40px;
+    z-index: 2;
+}
+
+
+
+.box_none {
+display: none;
+}
+
+.blood3 {
+background: url(blood3.png) no-repeat;
+width: 100px;
+height: 100px;
+position: absolute;
+}
+
+
+</style>
+
+<script>
+
+$(function() {
+
+
+
+// fist option
+
+// $("#weponbar button").mousedown(function() {
+// $("#weponbar button").fadeTo(1, 1);
+// $(this).fadeTo(400, 0.6);
+// });
+
+// second option
+
+// $("#weponbar button").mousedown(function() {
+// $("#weponbar button").slideDown(500);
+// $(this).slideUp("slow");
+// });
+
+$("#weponbar button").mousedown(function() {
+    $("#weponbar button").stop().slideDown(500);
+    var gunImg = $(this).css("background-image");
+    var ak47 = gunImg.search(/ak47/);
+    var p90 = gunImg.search(/p90/);
+    var aug = gunImg.search(/aug/);
+    var m4a1 = gunImg.search(/m4a1/);
+    if(ak47 >= 0) {
+        var ak47Block = $(".curretWeapon");
+        $(".curretWeapon").css({"background": "url(ak47.png) no-repeat"})
+    } else if(p90 >= 0){
+        $(".curretWeapon").css({"background": "url(p90.png) no-repeat"})
+    } else if (aug >= 0){
+        $(".curretWeapon").css({"background": "url(aug.png) no-repeat"})
+    } else if(m4a1 >= 0){
+        $(".curretWeapon").css({"background": "url(m4a1.png) no-repeat"})
+    }
+
+    $(this).stop().slideUp("slow");
+});
+
+
+// third optin
+
+// $("#weponbar button").mousedown(function() {
+// $("#weponbar button").fadeIn( "slow" );
+// $(this).fadeOut( "slow" );
+// });
+
+// fourth optin
+
+// $("#weponbar button").mousedown(function() {
+// $("#weponbar button").show(500);
+// $(this).hide( "slow" );
+// });
+
+// var lastsound=1
+
+// $("#head").mousedown(function() {
+// var sound="beep"+lastsound
+// document.getElementById(sound).play();
+// lastsound+=1
+// if(lastsound > 10) { lastsound=1 } 
+
+// var scoreContent = $("#scoreValue").text(); 
+// $("#scoreValue").text(parseInt(scoreContent) +1);
+
+// var x = event.pageX;
+// var y = event.pageY;
+
+
+// $("#enemy").addClass("box_none");
+
+// $("#blood1").addClass("blood1").css({"left": Math.floor((Math.random() * (( x - 100) - (x + 100) + 1)) + (x + 100)) + "px", "top": Math.floor((Math.random() * (( y - 100) - (y + 100) + 1)) + (y + 100)) + "px"});
+// $("#blood2").addClass("blood2").css({"left": Math.floor((Math.random() * (( x - 100) - (x + 100) + 1)) + (x + 100)) + "px", "top": Math.floor((Math.random() * (( y - 100) - (y + 100) + 1)) + (y + 100)) + "px"});
+// $("#blood3").addClass("blood3").css({"left": Math.floor((Math.random() * ((x) - (x) + 1)) + (x)) + "px", "top": Math.floor((Math.random() * ( (y) - (y) + 1)) + (y) ) + "px"});
+
+ 
+
+// // $("#blood1").addClass("blood1").css({"left": Math.random() * ($(window).width() - 150) + "px", "top": Math.random() * ($(window).height() - 150) + "px"});
+// // $("#blood2").addClass("blood2").css({"left": Math.random() * ($(window).width() - 150) + "px", "top": Math.random() * ($(window).height() - 150) + "px"});
+
+// });
+
+
+var lastsound=1
+
+$("#enemy div").mousedown(function() {
+var sound="beep"+lastsound
+document.getElementById(sound).play();
+lastsound+=1
+if(lastsound > 10) { lastsound=1 } 
+
+var scoreContent = $("#scoreValue").text(); 
+$("#scoreValue").text(parseInt(scoreContent) +1);
+
+
+var corpus = $(this).attr("class");
+var leftLeg = corpus.search(/leftLeg/);
+var rightleg = corpus.search(/rightleg/); 
+    if(corpus == "head"){
+        $("#headValue").text(parseInt($("#headValue").text()) +1);
+        // hp = hp - 100;
+    } else if(corpus == "chest"){
+        $("#chestValue").text(parseInt($("#chestValue").text()) +1);
+        // hp = hp - 27;
+    } else if(corpus == "abdomed"){
+        $("#abdomedValue").text(parseInt($("#abdomedValue").text()) +1);
+        // hp = hp - 34;   
+    } else if(leftLeg >= 0){
+        $("#leftLegValue").text(parseInt($("#leftLegValue").text()) +1);  
+        // hp = hp - 26;
+    } else if(rightleg >= 0){
+        $("#rightLegValue").text(parseInt($("#rightLegValue").text()) +1);
+        // hp = hp - 26;  
+    }
+
+var x = event.pageX;
+var y = event.pageY;
+
+// if(hp <= 0){
+$("#enemy").addClass("box_none");
+
+$("#blood1").addClass("blood1").css({"left": Math.floor((Math.random() * (( x - 100) - (x + 100) + 1)) + (x + 100)) + "px", "top": Math.floor((Math.random() * (( y - 100) - (y + 100) + 1)) + (y + 100)) + "px"});
+$("#blood2").addClass("blood2").css({"left": Math.floor((Math.random() * (( x - 100) - (x + 100) + 1)) + (x + 100)) + "px", "top": Math.floor((Math.random() * (( y - 100) - (y + 100) + 1)) + (y + 100)) + "px"});
+$("#blood3").addClass("blood3").css({"left": Math.floor((Math.random() * ((x) - (x) + 1)) + (x)) + "px", "top": Math.floor((Math.random() * ( (y) - (y) + 1)) + (y) ) + "px"});
+// }
+
+
+
+
+
+//  if(hp <= 0){
+//     hp = 100;
+// }
+
+// $("#blood1").addClass("blood1").css({"left": Math.random() * ($(window).width() - 150) + "px", "top": Math.random() * ($(window).height() - 150) + "px"});
+// $("#blood2").addClass("blood2").css({"left": Math.random() * ($(window).width() - 150) + "px", "top": Math.random() * ($(window).height() - 150) + "px"});
+
+});
+
+
+var lastsoundGun=1
+
+$("html").mousedown(function() {
+var curretWepon = $(".curretWeapon").css("background-image");
+var ak47 = curretWepon.search(/ak47/);
+var p90 = curretWepon.search(/p90/);
+var aug = curretWepon.search(/aug/);
+var m4a1 = curretWepon.search(/m4a1/);
+    if(ak47 >= 0){
+    var sound="ak"+lastsoundGun;
+    document.getElementById(sound).play();
+    lastsoundGun+=1
+        if(lastsoundGun > 10) { lastsoundGun=1 }
+    } else if(p90 >= 0){
+    var sound="p"+lastsoundGun;
+    document.getElementById(sound).play();
+    lastsoundGun+=1
+        if(lastsoundGun > 10) {lastsoundGun=1}
+    } else if(m4a1 >= 0) {
+    var sound="m4a"+lastsoundGun;
+    document.getElementById(sound).play();
+    lastsoundGun+=1
+        if(lastsoundGun > 10) {lastsoundGun=1}
+    } else if(aug >= 0){
+    var sound="aug"+lastsoundGun;
+    document.getElementById(sound).play();
+    lastsoundGun+=1
+        if(lastsoundGun > 10) {lastsoundGun=1}
+    }
+
+
+var totcon = $("#totalValue").text();
+
+var totalContent = parseInt($("#totalValue").text()) + 1;
+$("#totalValue").text(totalContent);
+
+
+var scoreContent = $("#scoreValue").text();
+$("#missValue").text(parseInt(totcon) - parseInt(scoreContent) +1);
+
+// $("#accuracyValue").text(Number(scoreContent * 100) / (Number(totalContent)) + "%");
+ // var result = parseInt(scoreContent) * 100 / parseInt(totalContent) + "%";
+var result = parseInt(scoreContent) * 100 / parseInt(totalContent);
+
+$("#accuracyValue").text(result.toFixed(1) + "%");
+
+
+});
+
+function target(){
+    hp = 100;
+var proc = ($(window).height() / 100) * 64; 
+var randomY = Math.floor(Math.random() * proc); 
+var randomX = Math.floor(Math.random() * ($(window).width() - 70));
+// $("#enemy").removeClass("box_none").addClass("enemy_block").css({"left": randomX + 'px', "top": randomY + 'px'});
+$("#enemy").removeClass("box_none").addClass("enemy_block").css({"left": randomX + 'px', "top": randomY + 'px'});
+$("#head").addClass("head");
+$("#chest").addClass("chest");
+$("#abdomed").addClass("abdomed");
+$("#leftLegs1").addClass("leftLegs1");
+$("#leftLegs2").addClass("leftLegs2");
+$("#leftLegs4").addClass("leftLegs4");
+$("#leftLegs5").addClass("leftLegs5");
+$("#leftLegs6").addClass("leftLegs6");
+$("#rightlegs1").addClass("rightlegs1");
+$("#rightlegs2").addClass("rightlegs2");
+
+
+
+
+$("#blood1").removeClass("blood1");
+$("#blood2").removeClass("blood2");
+$("#blood3").removeClass("blood3");
+
+}
+
+
+setInterval(function () { 
+target();
+}, 1000);
+
+
+
+  
+
+});
+</script>
+</body>
+</html>
